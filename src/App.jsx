@@ -57,22 +57,48 @@ function Home() {
       {/* Banner */}
       <div className="p-4">
         <img
-          src="parqis-hero1.png"
+          src="/parqis-hero1.png"
           alt="banner"
           className="rounded-2xl shadow"
+          onError={e => {
+            if (!e.target.dataset.failed) {
+              e.target.dataset.failed = "1";
+              e.target.src = "https://via.placeholder.com/400x200?text=Image+Not+Found";
+            }
+          }}
         />
       </div>
 
       {/* Product Cards */}
       <div className="grid grid-cols-2 gap-4 p-4">
         <Link to="/coming-soon" className="bg-white p-3 rounded-xl shadow">
-          <img src="glowrify.png" alt="lamp" className="rounded-lg mb-2" />
+          <img
+            src="/glowrify.png"
+            alt="lamp"
+            className="rounded-lg mb-2"
+            onError={e => {
+              if (!e.target.dataset.failed) {
+                e.target.dataset.failed = "1";
+                e.target.src = "https://via.placeholder.com/150?text=Image+Not+Found";
+              }
+            }}
+          />
           <p className="font-semibold text-sm">Brand Calling You!</p>
           <p className="text-xs">GLOWRIFY</p>
         </Link>
 
         <Link to="/coming-soon" className="bg-white p-3 rounded-xl shadow">
-          <img src="Healthastic.png" alt="chips" className="rounded-lg mb-2" />
+          <img
+            src="/Healthastic.png"
+            alt="chips"
+            className="rounded-lg mb-2"
+            onError={e => {
+              if (!e.target.dataset.failed) {
+                e.target.dataset.failed = "1";
+                e.target.src = "https://via.placeholder.com/150?text=Image+Not+Found";
+              }
+            }}
+          />
           <p className="font-semibold text-sm">Explore More</p>
           <p className="text-xs">HEALTASTIC!</p>
         </Link>
@@ -89,10 +115,12 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
+          {/* Redirect all unknown routes to Home */}
+          <Route path="*" element={<Home />} />
         </Routes>
 
         {/* Bottom Navigation */}
-        <div className="fixed bottom-0 w-full bg-purple-300 flex justify-around p-2 text-sm">
+        <div className="fixed bottom-0 w-full bg-purple-300 flex justify-around p-2 text-sm z-50">
           <Link to="/" className="flex flex-col items-center">
             <span>🏠</span>
             Home
@@ -118,4 +146,3 @@ export default function App() {
     </Router>
   );
 }
-
