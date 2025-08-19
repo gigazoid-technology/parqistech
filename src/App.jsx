@@ -57,7 +57,7 @@ function Home() {
       {/* Banner */}
       <div className="p-4">
         <img
-          src="/parqis-hero1.png"
+          src={`${import.meta.env.BASE_URL}parqis-hero1.png`}
           alt="banner"
           className="rounded-2xl shadow"
           onError={e => {
@@ -73,7 +73,7 @@ function Home() {
       <div className="grid grid-cols-2 gap-4 p-4">
         <Link to="/coming-soon" className="bg-white p-3 rounded-xl shadow">
           <img
-            src="/glowrify.png"
+            src={`${import.meta.env.BASE_URL}glowrify.png`}
             alt="lamp"
             className="rounded-lg mb-2"
             onError={e => {
@@ -89,7 +89,7 @@ function Home() {
 
         <Link to="/coming-soon" className="bg-white p-3 rounded-xl shadow">
           <img
-            src="/Healthastic.png"
+            src={`${import.meta.env.BASE_URL}Healthastic.png`}
             alt="chips"
             className="rounded-lg mb-2"
             onError={e => {
