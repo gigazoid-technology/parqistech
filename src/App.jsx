@@ -57,7 +57,7 @@ function Home() {
       {/* Banner */}
       <div className="p-4">
         <img
-          src="/parqis-hero1.png"
+          src="parqis-hero1.png"
           alt="banner"
           className="rounded-2xl shadow"
         />
