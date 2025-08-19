@@ -57,13 +57,13 @@ function Home() {
       {/* Banner */}
       <div className="p-4">
         <img
-          src={`${import.meta.env.BASE_URL}parqis-hero1.png`}
+          src={`${import.meta.env.BASE_URL}ab.png`}
           alt="banner"
           className="rounded-2xl shadow"
           onError={e => {
             if (!e.target.dataset.failed) {
               e.target.dataset.failed = "1";
-              e.target.src = "https://via.placeholder.com/400x200?text=Image+Not+Found";
+              e.target.src = `${import.meta.env.BASE_URL}placeholder.png`;
             }
           }}
         />
@@ -73,13 +73,13 @@ function Home() {
       <div className="grid grid-cols-2 gap-4 p-4">
         <Link to="/coming-soon" className="bg-white p-3 rounded-xl shadow">
           <img
-            src={`${import.meta.env.BASE_URL}glowrify.png`}
+            src={`${import.meta.env.BASE_URL}bc.png`}
             alt="lamp"
             className="rounded-lg mb-2"
             onError={e => {
               if (!e.target.dataset.failed) {
                 e.target.dataset.failed = "1";
-                e.target.src = "https://via.placeholder.com/150?text=Image+Not+Found";
+                e.target.src = `${import.meta.env.BASE_URL}placeholder.png`;
               }
             }}
           />
@@ -89,13 +89,13 @@ function Home() {
 
         <Link to="/coming-soon" className="bg-white p-3 rounded-xl shadow">
           <img
-            src={`${import.meta.env.BASE_URL}Healthastic.png`}
+            src={`${import.meta.env.BASE_URL}cd.png`}
             alt="chips"
             className="rounded-lg mb-2"
             onError={e => {
               if (!e.target.dataset.failed) {
                 e.target.dataset.failed = "1";
-                e.target.src = "https://via.placeholder.com/150?text=Image+Not+Found";
+                e.target.src = `${import.meta.env.BASE_URL}placeholder.png`;
               }
             }}
           />
